@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfeito 3D</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="tabs" style="max-width:1100px; margin:0 auto 20px auto;">
+    <button type="button" class="tab-btn active" onclick="abrirAba('calculadora', event)">Calculadora</button>
+    <button type="button" class="tab-btn" onclick="abrirAba('pedidos', event)">Pedidos</button>
+    <button type="button" class="tab-btn" onclick="abrirAba('estoque', event)">Estoque</button>
+  </div>
+
+  <div id="calculadora" class="tab-content active">
+    <div class="container">
+      <div class="grid">
+
+        <div>
+          <h1>Calculadora 3D</h1>
+          <br>
+
+          <div class="input-group">
+            <label>Preço Filamento (1kg €)</label>
+            <input type="number" id="materialKg" value="20">
+          </div>
+
+          <div class="input-group">
+            <label>Peso da Peça (g)</label>
+            <input type="number" id="peso" value="20">
+          </div>
+
+          <div class="input-group">
+            <label>Energia €/kWh</label>
+            <input type="number" id="energia" value="0.2">
+          </div>
+
+          <div class="input-group">
+            <label>Potência Impressora (W)</label>
+            <input type="number" id="potencia" value="120">
+          </div>
+
+          <div class="input-group">
+            <label>Horas</label>
+            <input type="number" id="horas" value="2">
+          </div>
+
+          <div class="input-group">
+            <label>Minutos</label>
+            <input type="number" id="minutos" value="0">
+          </div>
+
+          <div class="input-group">
+            <label>Máquina €/Hora</label>
+            <input type="number" id="maquinaHora" value="2">
+          </div>
+
+          <div class="input-group">
+            <label>Mão de Obra €</label>
+            <input type="number" id="maoObra" value="2">
+          </div>
+
+          <div class="input-group">
+            <label>Margem Lucro %</label>
+            <input type="number" id="margem" value="40">
+          </div>
+        </div>
+
+        <div class="resultado">
+          <h2>Resultado</h2>
+          <br>
+
+          <div class="linha">
+            <span>Custo Material</span>
+            <strong id="custoMaterial">€0</strong>
+          </div>
+
+          <div class="linha">
+            <span>Custo Energia</span>
+            <strong id="custoEnergia">€0</strong>
+          </div>
+
+          <div class="linha">
+            <span>Custo Máquina</span>
+            <strong id="custoMaquina">€0</strong>
+          </div>
+
+          <div class="linha">
+            <span>Custo Total</span>
+            <strong id="custoTotal">€0</strong>
+          </div>
+
+          <br>
+
+          <div class="preco" id="precoFinal">€0</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="pedidos" class="tab-content">
+    <div class="container">
+      <h1>Pedidos</h1>
+      <br>
+
+      <div class="input-group">
+        <label>Cliente</label>
+        <input type="text" id="clientePedido">
+      </div>
+
+      <div class="input-group">
+        <label>Produto</label>
+        <select id="produtoPedido">
+          <option value="Chaveiro Nome">Chaveiro Nome</option>
+          <option value="Chaveiro Anime">Chaveiro Anime</option>
+          <option value="Chaveiro Logo">Chaveiro Logo</option>
+          <option value="Produto Personalizado">Produto Personalizado</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>Valor €</label>
+        <input type="number" id="valorPedido">
+      </div>
+
+      <button onclick="adicionarPedido()">Adicionar Pedido</button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Produto</th>
+            <th>Valor</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaPedidos"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="estoque" class="tab-content">
+    <div class="container">
+      <h1>Estoque</h1>
+      <br>
+
+      <div class="input-group">
+        <label>Produto</label>
+        <select id="produtoEstoque">
+          <option value="PLA Preto">PLA Preto</option>
+          <option value="PLA Branco">PLA Branco</option>
+          <option value="PETG">PETG</option>
+          <option value="Resina">Resina</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>Quantidade</label>
+        <input type="number" id="quantidadeEstoque">
+      </div>
+
+      <button onclick="adicionarEstoque()">Adicionar Estoque</button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaEstoque"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
