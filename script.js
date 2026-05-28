@@ -80,9 +80,13 @@ function calcular() {
   const maoObra = Number(document.getElementById('maoObra').value)
   const margem = Number(document.getElementById('margem').value)
 
+  const incluirIVA =
+    document.getElementById('incluirIVA').checked
+
   const tempoTotal = horas + (minutos / 60)
 
-  const custoMaterial = (peso * materialKg) / 1000
+  const custoMaterial =
+    (peso * materialKg) / 1000
 
   const custoEnergia =
     ((potencia / 1000) * tempoTotal) * energia
@@ -96,8 +100,13 @@ function calcular() {
     custoMaquina +
     maoObra
 
-  const precoFinal =
+  let precoFinal =
     custoTotal * (1 + margem / 100)
+
+  // IVA 22%
+  if(incluirIVA){
+    precoFinal = precoFinal * 1.22
+  }
 
   document.getElementById('custoMaterial').innerText =
     moeda(custoMaterial)
@@ -113,6 +122,9 @@ function calcular() {
 
   document.getElementById('precoFinal').innerText =
     moeda(precoFinal)
+
+    document.getElementById('incluirIVA')
+  .addEventListener('change', calcular)
 }
 
 function adicionarPedido() {
@@ -162,3 +174,34 @@ document.querySelectorAll('input').forEach(input => {
 calcular()
 renderPedidos()
 renderEstoque()
+
+/* =======================
+   LOADING + WELCOME
+======================= */
+
+window.addEventListener('load', () => {
+
+  const loader =
+    document.getElementById('loader')
+
+  const welcome =
+    document.getElementById('welcomeMessage')
+
+  setTimeout(() => {
+
+    loader.style.opacity = '0'
+
+    loader.style.visibility = 'hidden'
+
+    welcome.classList.add('show')
+
+  }, 1800)
+
+  setTimeout(() => {
+
+    welcome.classList.remove('show')
+
+  }, 5000)
+
+})
+const LINK_INSTAGRAM = "https://instagram.com/"
