@@ -1,27 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg-primary: #0b1120;
-  --bg-secondary: #111827;
-  --card-bg: rgba(17, 24, 39, 0.92);
 
-  --text-primary: #f9fafb;
-  --text-secondary: #94a3b8;
+  --bg-primary: #140f1f;
+  --bg-secondary: #1e1630;
 
-  --border-color: rgba(255,255,255,0.08);
+  --card-bg:
+    rgba(30, 22, 48, 0.92);
 
-  --accent: #3b82f6;
-  --accent-hover: #2563eb;
+  --text-primary: #f5f3ff;
 
-  --success: #22c55e;
-  --danger: #ef4444;
+  --text-secondary: #c4b5fd;
+
+  --border-color:
+    rgba(255,255,255,0.08);
+
+  --accent: #a855f7;
+
+  --accent-hover: #9333ea;
+
+  --success: #d8b4fe;
+
+  --danger: #f43f5e;
 
   --shadow:
     0 10px 30px rgba(0,0,0,0.35);
 
   --radius: 18px;
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -33,16 +39,83 @@ html {
 }
 
 body {
+
   font-family: 'Inter', sans-serif;
+
   background:
-    radial-gradient(circle at top left, #1e3a8a 0%, transparent 25%),
-    radial-gradient(circle at bottom right, #0f766e 0%, transparent 20%),
-    linear-gradient(135deg, #020617, #0f172a, #111827);
+    radial-gradient(
+      circle at top left,
+      #7e22ce 0%,
+      transparent 25%
+    ),
+
+    radial-gradient(
+      circle at bottom right,
+      #6d28d9 0%,
+      transparent 20%
+    ),
+
+    linear-gradient(
+      135deg,
+      #0f0a19,
+      #140f1f,
+      #1b1430
+    );
+
   min-height: 100vh;
+
   padding: 30px;
+
   color: var(--text-primary);
 }
+/* TÍTULOS */
 
+h1,
+h2,
+h3,
+h4 {
+
+  color: #f5f3ff;
+}
+
+/* TEXTOS SECUNDÁRIOS */
+
+p,
+label,
+span {
+
+  color: #c4b5fd;
+}
+
+/* PREÇO */
+
+.preco,
+.produto-preco {
+
+  color: #e9d5ff;
+}
+
+/* TEXTO DAS TAREFAS */
+
+.task-info p {
+
+  color: #d8b4fe;
+}
+
+/* TABELAS */
+
+table td {
+
+  color: #ddd6fe;
+}
+
+/* BOTÕES */
+
+button,
+.btn-comprar {
+
+  color: white;
+}
 /* =======================
    TABS
 ======================= */
@@ -187,7 +260,7 @@ select {
 
   border: 1px solid rgba(255,255,255,0.08);
 
-  background: #0f172a;
+  background: #140f1f;
 
   color: white;
 
@@ -208,7 +281,7 @@ select:focus {
     0 0 0 4px rgba(59,130,246,0.15);
 }
 select option {
-  background: #0f172a;
+  background: #140f1f;
   color: white;
 }
 input::placeholder {
@@ -296,7 +369,7 @@ button:active {
   font-size: 42px;
   font-weight: 800;
 
-  color: var(--success);
+  color: #e9d5ff;
 
   text-align: center;
 
@@ -463,6 +536,7 @@ button:active {
 }
 
 .btn-comprar {
+
   display: inline-block;
 
   width: 100%;
@@ -479,13 +553,33 @@ button:active {
 
   color: white;
 
-  background: linear-gradient(
-    135deg,
-    #ec4899,
-    #db2777
-  );
+  background:
+    linear-gradient(
+      135deg,
+      #a855f7,
+      #9333ea
+    );
+
+  transition: 0.25s ease;
+
+  border:
+    1px solid rgba(255,255,255,0.08);
 }
 
+.btn-comprar:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 20px rgba(168,85,247,0.35);
+
+  background:
+    linear-gradient(
+      135deg,
+      #c084fc,
+      #a855f7
+    );
+}
 /* =======================
    LOADING SCREEN
 ======================= */
@@ -641,12 +735,12 @@ button:active {
 
   border-radius: 14px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #3b82f6,
-      #2563eb
-    );
+background:
+linear-gradient(
+  135deg,
+  #a855f7,
+  #9333ea
+);
 
   color: white;
 
@@ -782,12 +876,12 @@ table {
 }
 
 table thead {
-  background:
-    linear-gradient(
-      135deg,
-      #1e293b,
-      #0f172a
-    );
+background:
+linear-gradient(
+  135deg,
+  #2e1065,
+  #1e1630
+);
 }
 
 table th {
