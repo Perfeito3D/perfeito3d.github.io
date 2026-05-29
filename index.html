@@ -22,6 +22,7 @@
         <button type="button" class="tab-btn" onclick="abrirAba('pedidos', event)">Pedidos</button>
         <button type="button" class="tab-btn" onclick="abrirAba('estoque', event)">Estoque</button>
         <button type="button" class="tab-btn" onclick="abrirAba('produtos', event)">Produtos</button>
+        <button type="button" class="tab-btn" onclick="abrirAba('tarefas', event)">Tarefas</button>
     </div>
 
     <div id="calculadora" class="tab-content active">
@@ -117,6 +118,28 @@
             </div>
         </div>
     </div>
+
+    <div id="tarefas" class="tab-content">
+
+  <div class="container">
+
+    <h1>Tarefas da Semana</h1>
+
+    <br>
+
+    <!-- BOTÕES DOS DIAS -->
+
+    <div id="diasSemana"></div>
+
+    <br>
+
+    <!-- LISTA DAS TAREFAS -->
+
+    <div id="tarefasLista"></div>
+
+  </div>
+
+</div>
 
     <div id="pedidos" class="tab-content">
         <div class="container">

@@ -205,3 +205,261 @@ window.addEventListener('load', () => {
 
 })
 const LINK_INSTAGRAM = "https://instagram.com/"
+
+document.addEventListener('DOMContentLoaded', () => {
+
+/* =======================
+   TAREFAS
+======================= */
+
+const tarefas = {
+
+"Segunda-feira": [
+
+  {
+    hora: "08:15",
+    titulo: "OLX + Marketplace",
+    descricao: "Anunciar produtos"
+  },
+
+  {
+    hora: "12:30",
+    titulo: "Instagram Story",
+    descricao: "Mostrar impressora a funcionar"
+  },
+
+  {
+    hora: "20:38",
+    titulo: "TikTok",
+    descricao: "Vídeo principal do produto"
+  },
+
+  {
+    hora: "21:15",
+    titulo: "Instagram Reel",
+    descricao: "Repost do TikTok"
+  }
+
+],
+
+"Terça-feira": [
+
+  {
+    hora: "08:21",
+    titulo: "Marketplace",
+    descricao: "Publicar foto produto"
+  },
+
+  {
+    hora: "13:00",
+    titulo: "Story",
+    descricao: "Nova impressão"
+  },
+
+  {
+    hora: "20:52",
+    titulo: "TikTok/Reel",
+    descricao: "Vídeo satisfying"
+  }
+
+],
+
+"Quarta-feira": [
+
+  {
+    hora: "08:15",
+    titulo: "Repost anúncio",
+    descricao: "Marketplace + OLX"
+  },
+
+  {
+    hora: "12:45",
+    titulo: "Instagram Story",
+    descricao: "Mostrar impressão quase pronta"
+  },
+
+  {
+    hora: "20:38",
+    titulo: "TikTok",
+    descricao: "Vídeo viral/articulado"
+  },
+
+  {
+    hora: "22:06",
+    titulo: "Instagram Reel",
+    descricao: "Vídeo curto extra"
+  }
+
+],
+
+"Quinta-feira": [
+
+  {
+    hora: "08:45",
+    titulo: "Marketplace",
+    descricao: "Anunciar produto novo"
+  },
+
+  {
+    hora: "18:47",
+    titulo: "TikTok Teaser",
+    descricao: "Preview do vídeo"
+  },
+
+  {
+    hora: "20:38",
+    titulo: "TikTok",
+    descricao: "Vídeo principal"
+  },
+
+  {
+    hora: "21:12",
+    titulo: "Instagram Reel",
+    descricao: "Produto novo"
+  }
+
+],
+
+"Sexta-feira": [
+
+  {
+    hora: "08:15",
+    titulo: "OLX + Vinted",
+    descricao: "Atualizar anúncios"
+  },
+
+  {
+    hora: "19:18",
+    titulo: "TikTok",
+    descricao: "Setup/impressão"
+  },
+
+  {
+    hora: "20:52",
+    titulo: "Instagram Reel",
+    descricao: "Produto pronto"
+  },
+
+  {
+    hora: "22:06",
+    titulo: "TikTok Extra",
+    descricao: "Vídeo trending"
+  }
+
+],
+
+"Sábado": [
+
+  {
+    hora: "10:15",
+    titulo: "Marketplace",
+    descricao: "Produto disponível hoje"
+  },
+
+  {
+    hora: "13:20",
+    titulo: "Story",
+    descricao: "Embalagem/envio"
+  },
+
+  {
+    hora: "20:38",
+    titulo: "TikTok",
+    descricao: "Vídeo principal"
+  },
+
+  {
+    hora: "21:40",
+    titulo: "Instagram Reel",
+    descricao: "Vídeo rápido"
+  }
+
+],
+
+"Domingo": [
+
+  {
+    hora: "11:30",
+    titulo: "Marketplace",
+    descricao: "Repost produto"
+  },
+
+  {
+    hora: "18:30",
+    titulo: "Story",
+    descricao: "Teaser melhor produto"
+  },
+
+  {
+    hora: "20:38",
+    titulo: "TikTok",
+    descricao: "Melhor vídeo da semana"
+  },
+
+  {
+    hora: "21:15",
+    titulo: "Instagram Reel",
+    descricao: "Repost TikTok"
+  }
+
+]
+
+}
+
+const diasSemana =
+  document.getElementById('diasSemana')
+
+const tarefasLista =
+  document.getElementById('tarefasLista')
+
+Object.keys(tarefas).forEach(dia => {
+
+  diasSemana.innerHTML += `
+
+    <button
+      class="dia-btn"
+      onclick="mostrarTarefas('${dia}')"
+    >
+      ${dia}
+    </button>
+
+  `
+})
+
+window.mostrarTarefas = function(dia){
+
+  tarefasLista.innerHTML = ''
+
+  tarefas[dia].forEach(tarefa => {
+
+    tarefasLista.innerHTML += `
+
+      <div class="task-item">
+
+        <div class="task-hour">
+          ${tarefa.hora}
+        </div>
+
+        <div class="task-info">
+
+          <h4>
+            ${tarefa.titulo}
+          </h4>
+
+          <p>
+            ${tarefa.descricao}
+          </p>
+
+        </div>
+
+      </div>
+
+    `
+  })
+}
+
+/* MOSTRAR SEGUNDA */
+
+mostrarTarefas('Segunda-feira')
+
+})

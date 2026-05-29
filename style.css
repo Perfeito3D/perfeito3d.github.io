@@ -553,7 +553,119 @@ button:active {
 
   font-weight: 600;
 }
+/* =======================
+   DIAS SEMANA
+======================= */
 
+.dias-semana {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.dia-btn {
+
+  padding: 14px 20px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255,255,255,0.05);
+
+  color: white;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.25s ease;
+}
+
+.dia-btn:hover {
+
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #2563eb
+    );
+
+  transform: translateY(-2px);
+}
+
+/* =======================
+   TAREFAS
+======================= */
+
+.tarefas-lista {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+.task-item {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 18px;
+
+  border-radius: 18px;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+}
+
+.task-hour {
+
+  min-width: 85px;
+
+  text-align: center;
+
+  padding:
+    10px 14px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #2563eb
+    );
+
+  color: white;
+
+  font-weight: 700;
+}
+
+.task-info h4 {
+
+  color: white;
+
+  margin-bottom: 4px;
+}
+
+.task-info p {
+
+  color: #94a3b8;
+
+  font-size: 14px;
+}
 /* =======================
    WELCOME MESSAGE
 ======================= */
